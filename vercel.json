@@ -1,0 +1,9 @@
+{
+  "outputDirectory": "frontend",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://RENDER_URL_HERE.onrender.com/api/$1"
+    }
+  ]
+}

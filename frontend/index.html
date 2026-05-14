@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLUS 고배당주 차트</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <span class="etf-badge">ETF</span>
+        <div class="title-block">
+          <h1 class="etf-name" id="etf-name">PLUS 고배당주</h1>
+          <span class="ticker" id="ticker">161510</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="stat-card">
+          <span class="stat-label">현재가</span>
+          <span class="stat-value" id="last-close">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">TTM 수익률</span>
+          <span class="stat-value yield" id="ttm-yield">—</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Range toolbar -->
+    <div class="toolbar">
+      <button class="range-btn" data-months="1">1M</button>
+      <button class="range-btn" data-months="3">3M</button>
+      <button class="range-btn" data-months="6">6M</button>
+      <button class="range-btn active" data-months="12">1Y</button>
+      <button class="range-btn" data-months="36">3Y</button>
+      <button class="range-btn" data-months="0">ALL</button>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-wrapper">
+      <div id="chart"></div>
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <span>데이터 로딩 중…</span>
+      </div>
+      <div id="tooltip" class="tooltip hidden"></div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <span class="legend-item up">▲ 상승</span>
+      <span class="legend-item down">▼ 하락</span>
+      <span class="legend-item div">↑ 분배금 지급일</span>
+    </div>
+
+    <!-- Dividend table -->
+    <section class="table-section">
+      <h2 class="section-title">분배금 지급 이력</h2>
+      <div class="table-wrapper">
+        <table id="div-table">
+          <thead>
+            <tr>
+              <th>지급일</th>
+              <th>분배금 (원)</th>
+              <th>연환산 수익률</th>
+            </tr>
+          </thead>
+          <tbody id="div-tbody">
+            <tr><td colspan="3" class="empty">데이터 없음</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

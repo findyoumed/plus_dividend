@@ -1,0 +1,7 @@
+fastapi>=0.110
+uvicorn[standard]>=0.27
+finance-datareader>=0.9.96
+pykrx>=1.0.45
+pandas>=2.1
+pydantic>=2.5
+openpyxl>=3.1
